@@ -4,6 +4,19 @@ body {
     background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 50%, #ffd6eb 100%);
     min-height: 100vh;
     overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* Touch optimizations */
+.btn, .card, .carousel-control-prev, .carousel-control-next {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+/* Prevent zoom on input focus */
+input[type="date"] {
+    font-size: 16px;
 }
 
 .text-pink {
@@ -421,11 +434,15 @@ body {
 /* Responsive design */
 @media (max-width: 768px) {
     .display-2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .display-3 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+    
+    .lead {
+        font-size: 1rem;
     }
     
     .floating-heart,
@@ -440,6 +457,113 @@ body {
     
     .final-buttons .btn {
         margin: 0 !important;
+        width: 100%;
+    }
+    
+    /* Login page mobile */
+    .login-container .card {
+        margin: 20px;
+        max-width: none;
+    }
+    
+    .login-container .card-body {
+        padding: 2rem !important;
+    }
+    
+    /* Gallery mobile */
+    .memory-photo img,
+    .memory-photo video {
+        height: 250px;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 8%;
+        height: 50px;
+        margin: auto 10px;
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 25px;
+        height: 25px;
+    }
+    
+    /* Messages page mobile */
+    .message-card .card {
+        min-height: 180px;
+    }
+    
+    .message-card .card-body {
+        padding: 1.5rem;
+    }
+    
+    /* Love letter mobile */
+    .love-letter .card {
+        margin: 20px;
+        font-size: 1rem;
+    }
+    
+    .love-letter .card-body {
+        padding: 2rem !important;
+    }
+    
+    .love-letter h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .display-2 {
+        font-size: 1.5rem;
+    }
+    
+    .display-3 {
+        font-size: 1.7rem;
+    }
+    
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .login-container .card-body {
+        padding: 1.5rem !important;
+    }
+    
+    .memory-photo img,
+    .memory-photo video {
+        height: 200px;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 10%;
+        height: 40px;
+        margin: auto 5px;
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .message-card .card {
+        min-height: 160px;
+    }
+    
+    .love-letter .card-body {
+        padding: 1.5rem !important;
+    }
+    
+    .love-letter h3 {
+        font-size: 1.3rem;
+    }
+    
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 
