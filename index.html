@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Voyage de ton Anniversaire</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Page 1: Login -->
+    <div id="page1" class="page active">
+        <div class="container-fluid vh-100 d-flex align-items-center justify-content-center">
+            <div class="login-container">
+                <div class="floating-hearts"></div>
+                <div class="card shadow-lg border-0">
+                    <div class="card-body p-5 text-center">
+                        <h1 class="mb-4 text-pink">✨ Entrée Secrète ✨</h1>
+                        <p class="lead mb-4">Entrez ta date d'anniversaire pour accéder à ta surprise ❤️</p>
+                        <form id="loginForm">
+                            <div class="mb-3">
+                                <input type="date" class="form-control form-control-lg" id="birthdateInput" required>
+                            </div>
+                            <button type="submit" class="btn btn-pink btn-lg px-5">
+                                <i class="fas fa-heart me-2"></i>Entrer
+                            </button>
+                        </form>
+                        <div id="errorMessage" class="mt-3 text-danger" style="display: none;">
+                            Yaaaa baby tu abuses !!! Réessaye en tout cas 😉
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2: Welcome Message -->
+    <div id="page2" class="page">
+        <div class="hero-section" style="background-image: url('assets/accueil.jpg');">
+            <div class="hero-overlay"></div>
+            <div class="container vh-100 d-flex align-items-center justify-content-center">
+                <div class="text-center text-white">
+                    <h1 class="display-3 mb-4 fade-in-text">Joyeux anniversaire mon amour !</h1>
+                    <p class="lead mb-5 fade-in-text delay-1">Aujourd'hui, je t'emmène dans un voyage rempli de souvenirs et de surprises… 💖</p>
+                    <button class="btn btn-light btn-lg px-5 fade-in-text delay-2" onclick="nextPage()">
+                        <i class="fas fa-arrow-right me-2"></i>Commencer le voyage
+                    </button>
+                </div>
+                <div class="floating-hearts-bg"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3: Gallery -->
+    <div id="page3" class="page">
+        <div class="container py-5">
+            <h2 class="text-center mb-5 text-pink">Nos Plus Beaux Souvenirs 📸</h2>
+            <div id="memoryCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-slide="0">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="card border-0 shadow">
+                                    <div class="memory-photo">
+                                        <img src="assets/première_rencontre_seul_à_seul.jpg" class="card-img-top" alt="Première rencontre">
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title text-pink">Notre première rencontre seul à seul</h5>
+                                        <p class="card-text">Ce moment magique où tout a commencé... 💕</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-slide="1">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="card border-0 shadow">
+                                    <div class="memory-photo">
+                                        <img src="assets/sourire.jpg" class="card-img-top" alt="Ton sourire">
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title text-pink">Ton sourire qui illumine ma vie</h5>
+                                        <p class="card-text">Chaque jour, tu rends ma vie plus belle ✨</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-slide="2">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="card border-0 shadow">
+                                    <div class="memory-photo video-container">
+                                        <video class="card-img-top" controls muted>
+                                            <source src="assets/sa_beauté.mp4" type="video/mp4">
+                                            <img src="assets/sa_beauté.jpg" alt="Sa beauté" style="width: 100%; height: auto;">
+                                        </video>
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title text-pink">Ta beauté qui m'éblouit</h5>
+                                        <p class="card-text">Une vidéo vaut mille mots... Tu es magnifique 💎</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-slide="3">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="card border-0 shadow">
+                                    <div class="memory-photo">
+                                        <img src="assets/son_amour.jpg" class="card-img-top" alt="Son amour">
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title text-pink">Ton amour qui me comble</h5>
+                                        <p class="card-text">Avec toi, chaque jour est une fête 🌹</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-slide="4">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="card border-0 shadow">
+                                    <div class="memory-photo">
+                                        <img src="assets/dernièr_date.jpg" class="card-img-top" alt="Dernière date">
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title text-pink">Notre dernière sortie ensemble</h5>
+                                        <p class="card-text">Chaque moment avec toi est précieux 💖</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#memoryCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#memoryCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+            <div class="text-center mt-5">
+                <div class="mb-3">
+                    <div class="progress" style="height: 10px;">
+                        <div class="progress-bar bg-pink" id="galleryProgress" role="progressbar" style="width: 20%"></div>
+                    </div>
+                    <small class="text-muted mt-2 d-block">Regardez tous les souvenirs pour continuer (<span id="viewedCount">1</span>/5)</small>
+                </div>
+                <button class="btn btn-pink btn-lg px-5" id="continueBtn" onclick="nextPage()" disabled>
+                    <i class="fas fa-heart me-2"></i>Continuer
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 4: Surprise Messages -->
+    <div id="page4" class="page">
+        <div class="container py-5">
+            <h2 class="text-center mb-5 text-pink">Messages Surprises 💌</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="message-card" onclick="revealMessage(this)">
+                        <div class="card h-100 border-0 shadow">
+                            <div class="card-body text-center d-flex flex-column justify-content-center">
+                                <i class="fas fa-heart fa-3x text-pink mb-3 pulse"></i>
+                                <h5>Clique pour découvrir</h5>
+                                <div class="hidden-message" style="display: none;">
+                                    <p class="lead">"Je t'aime pour ton rire, ton cœur et ta folie douce 😘"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="message-card" onclick="revealMessage(this)">
+                        <div class="card h-100 border-0 shadow">
+                            <div class="card-body text-center d-flex flex-column justify-content-center">
+                                <i class="fas fa-star fa-3x text-pink mb-3 pulse"></i>
+                                <h5>Clique pour découvrir</h5>
+                                <div class="hidden-message" style="display: none;">
+                                    <p class="lead">"Merci d'être la meilleure partie de ma vie 💕"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="message-card" onclick="revealMessage(this)">
+                        <div class="card h-100 border-0 shadow">
+                            <div class="card-body text-center d-flex flex-column justify-content-center">
+                                <i class="fas fa-gem fa-3x text-pink mb-3 pulse"></i>
+                                <h5>Clique pour découvrir</h5>
+                                <div class="hidden-message" style="display: none;">
+                                    <p class="lead">"Tu es mon soleil, ma lune et toutes mes étoiles ✨"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="message-card" onclick="revealMessage(this)">
+                        <div class="card h-100 border-0 shadow">
+                            <div class="card-body text-center d-flex flex-column justify-content-center">
+                                <i class="fas fa-infinity fa-3x text-pink mb-3 pulse"></i>
+                                <h5>Clique pour découvrir</h5>
+                                <div class="hidden-message" style="display: none;">
+                                    <p class="lead">"Mon amour pour toi grandit chaque jour 🌹"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <button class="btn btn-pink btn-lg px-5" onclick="nextPage()">
+                    <i class="fas fa-gift me-2"></i>Surprise finale
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 5: Final Surprise -->
+    <div id="page5" class="page">
+        <div class="container-fluid vh-100 d-flex align-items-center justify-content-center">
+            <div class="text-center">
+                <div class="confetti-container"></div>
+                <h1 class="display-2 mb-4 text-pink celebration-text">🎉 JOYEUX ANNIVERSAIRE ! 🎉</h1>
+                <div class="love-letter mb-5">
+                    <div class="card border-0 shadow-lg" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 20px; max-width: 800px; margin: 0 auto;">
+                        <div class="card-body p-5">
+                            <h3 class="text-pink mb-4">Mon amour,</h3>
+                            <p class="text-start mb-3">En ce jour unique, je veux te rappeler à quel point tu es la plus belle chose qui soit arrivée dans ma vie. Ton sourire éclaire mes journées, ta voix apaise mes nuits, et ton amour me rend meilleur chaque jour.</p>
+                            <p class="text-start mb-3">Aujourd'hui, je ne célèbre pas seulement la date de ta naissance, je célèbre le cadeau que Dieu m'a fait en te mettant sur mon chemin.</p>
+                            <p class="text-start mb-3">Même si la distance nous sépare, mon cœur bat toujours au rythme du tien. Je rêve de tous les instants que nous avons partagés et de tous ceux qui nous attendent.</p>
+                            <p class="text-start mb-3"><strong>Joyeux anniversaire, mon trésor ❤️.</strong></p>
+                            <p class="text-start mb-0"><em>Je t'aime au-delà des mots, au-delà du temps, au-delà de tout.</em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="final-buttons">
+                    <button class="btn btn-pink btn-lg me-3 px-5" onclick="restartJourney()">
+                        <i class="fas fa-redo me-2"></i>Recommencer le voyage
+                    </button>
+                    <button class="btn btn-outline-pink btn-lg px-5">
+                        <i class="fas fa-heart me-2"></i>Reviens demain pour une autre surprise
+                    </button>
+                </div>
+                <div class="floating-elements">
+                    <div class="floating-heart">💖</div>
+                    <div class="floating-star">⭐</div>
+                    <div class="floating-heart">💕</div>
+                    <div class="floating-star">✨</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
