@@ -219,6 +219,39 @@ body {
     transition: transform 0.6s ease-in-out;
 }
 
+/* Carousel navigation arrows */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    background: rgba(214, 51, 132, 0.3);
+    border-radius: 50px;
+    margin: auto 20px;
+    height: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: rgba(214, 51, 132, 0.6);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 30px;
+    height: 30px;
+    background-size: 100%;
+    filter: brightness(0) invert(1);
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z'/%3e%3c/svg%3e");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z'/%3e%3c/svg%3e");
+}
+
 /* Page 4: Messages */
 .message-card {
     cursor: pointer;
